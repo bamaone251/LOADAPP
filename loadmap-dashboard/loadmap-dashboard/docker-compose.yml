@@ -1,0 +1,12 @@
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8009:8009"
+    environment:
+      LOADMAP_URL: https://loadmap.loxload.com
+      APP_TIMEZONE: America/Chicago
+      DB_PATH: /app/data/dashboard.sqlite3
+    volumes:
+      - ./data:/app/data
+    restart: always
